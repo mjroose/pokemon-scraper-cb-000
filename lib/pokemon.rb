@@ -7,6 +7,7 @@ class Pokemon
     @name = data[:name]
     @type = data[:type]
     @db = data[:db]
+    @hp = 60
     @@all << self
   end
 
