@@ -20,6 +20,6 @@ class Pokemon
   end
 
   def self.find(id, db)
-    data = db.execute("SELECT * FROM pokemon;")
+    data = db.execute("SELECT * FROM pokemon;", [])
     binding.pry
 end
