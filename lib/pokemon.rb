@@ -3,9 +3,9 @@ class Pokemon
 
   def initialize(data)
     @id = data[:id]
-    @name = data.name
-    @type = data.type
-    @db = data.db
+    @name = data[:name]
+    @type = data[:type]
+    @db = data[:db]
     @@all << self
   end
 
