@@ -3,7 +3,6 @@ class Pokemon
   attr_accessor :id, :name, :type, :db, :hp
 
   def initialize(data)
-    @id = data[:id]
     @name = data[:name]
     @type = data[:type]
     @db = data[:db]
@@ -16,8 +15,9 @@ class Pokemon
   end
 
   def self.save(name, type, db)
-    pokemon = self.new({ id: 1, name: name, type: type, db: db });
-    db.execute("INSERT INTO pokemon (id, name, type) VALUES (?, ?, ?);", [pokemon.id, pokemon.name, pokemon.type])
+    pokemon = self.new({ name: name, type: type, db: db });
+    db.execute("INSERT INTO pokemon (name, type) VALUES (?, ?);", [pokemon.name, pokemon.type])
+    resp = db.execute("SELECT id FROM pokemon WHERE name = ?", [pokemon.name]);
   end
 
   def self.find(id, db)
