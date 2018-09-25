@@ -1,11 +1,11 @@
 class Pokemon
   @@all = []
 
-  def initialize(id, name = nil, type = nil, db = nil)
-    @id = id
-    @name = name
-    @type = type
-    @db = db
+  def initialize(data)
+    @id = data[:id]
+    @name = data[:name]
+    @type = data[:type]
+    @db = data[:db]
     binding.pry
     @@all << self
   end
