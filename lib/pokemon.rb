@@ -24,6 +24,6 @@ class Pokemon
     pk_id = data[0][0]
     pk_name = data[0][1]
     pk_type = data[0][2]
-    self.new(pk_id, pk_name, pk_type, db)
+    self.new(id: pk_id, name: pk_name, type: pk_type, db: db)
   end
 end
