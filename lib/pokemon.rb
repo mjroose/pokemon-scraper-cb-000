@@ -17,7 +17,7 @@ class Pokemon
 
   def self.save(name, type, db)
     pokemon = self.new({ id: 1, name: name, type: type, db: db });
-    db.execute("INSERT INTO pokemon (id, name, type) VALUES (?, ?, ?, ?);", [pokemon.id, pokemon.name, pokemon.type, pokemon.hp])
+    db.execute("INSERT INTO pokemon (id, name, type, hp) VALUES (?, ?, ?, ?);", [pokemon.id, pokemon.name, pokemon.type, pokemon.hp])
   end
 
   def self.find(id, db)
