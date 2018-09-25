@@ -7,6 +7,7 @@ class Pokemon
     @name = data[:name]
     @type = data[:type]
     @db = data[:db]
+    @hp = 60
     @@all << self
   end
 
@@ -20,7 +21,7 @@ class Pokemon
   end
 
   def self.find(id, db)
-    data = db.execute("SELECT * FROM pokemon;", [])
+    data = db.execute("SELECT * FROM pokemon WHERE id = ?;", [id])
     pk_id = data[0][0]
     pk_name = data[0][1]
     pk_type = data[0][2]
